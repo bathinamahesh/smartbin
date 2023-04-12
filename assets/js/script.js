@@ -23,9 +23,7 @@ updateTrashLevels();
 
 setInterval(() => {
     levels.forEach((level, index) => {
-        level += Math.random() * 0.2 - 0.1;
-        level = Math.max(Math.min(level, 1), 0);
-        levels[index] = level;
+        levels[index] = level[index];
         setTrashLevel(index, level);
     });
 }, 2000);

@@ -14,7 +14,7 @@ body {
 .dustbin {
     position: relative;
     width: 150px;
-    height: 250px;
+    height: 300px;
     margin: 0 20px;
 }
 
@@ -23,8 +23,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
-    background-color: #bbb;
+    height: 50px;
+    margin-top: 35%;
+    background-color: rgb(12, 12, 12);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -34,7 +35,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 250px;
+    height: 180px;
     background-color: #bbb;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
