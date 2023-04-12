@@ -9,6 +9,207 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f2f2f2;
+
+    color: #444;
+
+}
+
+.container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    margin-top: 50px;
+
+}
+
+.dustbin {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 300px;
+
+    margin: 0 20px;
+
+}
+
+.lid {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 35%;
+
+    background-color: rgb(12, 12, 12);
+
+    border-top-left-radius: 20px;
+
+    border-top-right-radius: 20px;
+
+}
+
+.trash {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 180px;
+
+    background-color: #bbb;
+
+    border-bottom-left-radius: 20px;
+
+    border-bottom-right-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+#trash-level1 {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 0;
+
+    background-color: #ff8c00;
+
+    transition: height 4s ease-out;
+
+}
+
+#trash-level2 {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 0;
+
+    background-color: #d4c144df;
+
+    transition: height 4s ease-out;
+
+}
+
+#trash-level3 {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 0;
+
+    background-color: #9ec82d;
+
+    transition: height 4s ease-out;
+
+}
+
+#trash-level4 {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 0;
+
+    background-color: #e61717;
+
+    transition: height 4s ease-out;
+
+}
+
+.percentage {
+
+    position: absolute;
+
+    bottom: -25px;
+
+    left: 0;
+
+    width: 100%;
+
+    font-size: 18px;
+
+    text-align: center;
+
+}
+
+#percentage1 {
+
+    color: rgb(106, 191, 236);
+
+}
+
+#percentage2 {
+
+    color: #abd442;
+
+}
+
+#percentage3 {
+
+    color: #25d722;
+
+}
+
+p {
+
+    font-size: 20px;
+
+}
+
+.container45 {
+
+    background-color: rgb(192, 192, 192);
+
+    width: 80%;
+
+    border-radius: 15px;
+
+}
+     </style>
   </head>
   <body>
     <h1>Dustbin Level Indicator</h1>
@@ -66,7 +267,59 @@
     <h3 style="margin-left:30%;">Percentage :{{ percent1 }}% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Percentage :{{ percent2 }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Percentage :{{ percent3 }}</h3>
     <h3 style="margin-left:30%;">Phn num :{{ d1phn }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phn num :{{ d2phn }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Phn number :{{ d3phn }}</h3>
 
+    <script>
+      const dustbins = document.querySelectorAll('.dustbin');
 
+var a = document.getElementById("aa").value;
+
+var b = document.getElementById("bb").value;
+
+var c = document.getElementById("cc").value;
+
+a = parseInt(a);
+
+b = parseInt(b);
+
+c = parseInt(c);
+
+const levels = [a / 100, b / 100, c / 100];
+
+function setTrashLevel(index, level) {
+
+    const trashLevel = dustbins[index].querySelector('.trash-level');
+
+    trashLevel.style.height = `${level * 100}%`;
+
+    const percentage = Math.round(level * 100);
+
+    trashLevel.setAttribute('data-percentage', `${percentage}%`);
+
+}
+
+function updateTrashLevels() {
+
+    levels.forEach((level, index) => {
+
+        setTrashLevel(index, level);
+
+    });
+
+}
+
+updateTrashLevels();
+
+setInterval(() => {
+
+    levels.forEach((level, index) => {
+
+        levels[index] = level[index];
+
+        setTrashLevel(index, level);
+
+    });
+
+}, 2000);
+      </script>
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
