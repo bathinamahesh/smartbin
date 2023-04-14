@@ -247,25 +247,9 @@ p {
           <input type="text" style="display:none;" id="bb" value="{{ percent2 }}">
         </div>
       </div>
-      <div class="dustbin" style="display:none;">hid div
-        <div class="lid"><h3 style="padding-left:33px;color:white;">Dustbin3</h3></div>
-        <div class="trash">
-          {% if data3 is 1 %}
-          <div class="trash-level" id="trash-level1"></div>
-          {%  elif  data3 is 2 %}
-          <div class="trash-level" id="trash-level2"></div>
-          {% elif data3 is 3 %}
-          <div class="trash-level" id="trash-level3"></div>
-          {% elif data3 is 4 %}
-          <div class="trash-level" id="trash-level4"></div>
-          {% endif %}
-          <div class="percentage" id="percentage3"></div>
-          <input type="text"  style="display:none;" id="cc" value="{{ percent3 }}">
-        </div>
-      </div>
     </div>
-    <h3 style="margin-left:30%;">Percentage :{{ percent1 }}% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Percentage :{{ percent2 }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--  Percentage :{{ percent3 }}--></h3>
-    <h3 style="margin-left:30%;">Phn num :{{ d1phn }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phn num :{{ d2phn }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Phn number :{{ d3phn }}--></h3>
+    <h3 style="margin-left:30%;">Percentage :{{ percent1 }}% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Percentage :{{ percent2 }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+    <h3 style="margin-left:30%;">Phn num :{{ d1phn }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phn num :{{ d2phn }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h3>
 
     <script>
       const dustbins = document.querySelectorAll('.dustbin');
